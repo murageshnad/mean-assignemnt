@@ -4,7 +4,7 @@
  1. Install npm packages using 'npm install' command.
  
  
- 2. Running the project
+ 2. Running the project-
   node server.js
   
   
