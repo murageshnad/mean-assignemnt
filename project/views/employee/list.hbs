@@ -1,0 +1,68 @@
+
+<body>
+
+
+<h2><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Create New</a> Student List</h2> 
+
+<script>
+    function g(){
+        
+            var v ;
+                if( {{this.total}} > 60 ){
+                    v = "pass"
+                }
+                else {
+                    v = "fail"
+                }
+                return v ;
+    }
+</script>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>Semester</th>
+            <th>Subject</th>
+            <th>Minor 1</th>
+            <th>Minor 2</th>
+            <th>Assignment Marks</th>
+            <th>External Marks</th>
+            <th>Total Marks</th>
+            <th>GRADE</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>{{this.semester}}</td>
+            <td>{{this.subject}}</td>
+            <td>{{this.minor1}}</td>
+            <td>{{this.minor2}}</td>
+            <td>{{this.ass}}</td>
+            <td>{{this.esa}}</td>
+            <td>{{this.total}}</td>
+            <td>
+               {{this.grade}}
+            </td>
+
+
+            <td>
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+    
+</body>
